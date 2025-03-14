@@ -46,16 +46,17 @@ pip install -r requirements.txt
 
 ### Construir y ejecutar el contenedor Docker
 
-1. Construye la imagen Docker:
-   ```bash
-   docker build -t flask-api .
-   ```
-2. Ejecuta el contenedor:
-   ```bash
-   docker run -d -p 5000:5000 flask-api
-   ```
+### Desarrollo:
+```bash
+docker-compose up dev --build
+```
+Accede en: [http://localhost:5000](http://localhost:5000)
 
-La API estará disponible en `http://localhost:5000`.
+### Producción:
+```bash
+docker-compose up prod --build
+```
+Accede en: [http://localhost:8000](http://localhost:8000)
 
 ## Despliegue en Render
 
