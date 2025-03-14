@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app/app
+    environment:
+      - FLASK_ENV=development
+
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8000:5000"
+    environment:
+      - FLASK_ENV=production
